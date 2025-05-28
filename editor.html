@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HistoriaApp - Editor Mejorado</title>
+<link rel="stylesheet" href="css/editor.css" />
+</head>
+<body>
+
+<header>
+  <h1>HistoriaApp</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="editor.html">Editor</a>
+    <a href="lecturas.html">Lecturas</a>
+    <a href="acerca.html">Acerca</a>
+  </nav>
+</header>
+
+<main>
+  <section class="editor-container">
+
+    <div class="editor-controls">
+      <button id="btn-bold" type="button"><strong>B</strong></button>
+      <button id="btn-italic" type="button"><em>I</em></button>
+      <button id="btn-underline" type="button"><u>U</u></button>
+      <select id="font-select">
+        <option value="sans-serif">Sans-serif</option>
+        <option value="serif">Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+      </select>
+
+      <!-- Botón icono para abrir modal insertar imagen -->
+      <button id="btn-open-image-modal" title="Insertar imagen" aria-label="Insertar imagen" type="button" class="icon-button">
+        📷
+      </button>
+
+      <!-- Botón para remover imagen seleccionada (oculto por defecto) -->
+      <button id="btn-remove-image" title="Remover imagen seleccionada" aria-label="Remover imagen" type="button" style="display:none;">
+        ❌
+      </button>
+    </div>
+
+    <div class="editor-wrapper">
+      <div class="line-numbers" id="line-numbers">
+        <!-- Números de línea van aquí -->
+      </div>
+      <div id="story-input" contenteditable="true" spellcheck="false" aria-label="Editor de historia"></div>
+    </div>
+
+    <!-- Eliminé la sección de inserción fija -->
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 HistoriaApp</p>
+</footer>   
+
+<!-- Modal de imagen -->
+<div class="modal modal-hidden" id="image-modal">
+  <h3>Insertar Imagen</h3>
+  <input type="file" id="modal-image-file" accept="image/*" />
+  <label for="modal-image-line">Línea para insertar:</label>
+  <input type="number" id="modal-image-line" min="1" placeholder="Número de línea" />
+
+  <!-- Estos son los controles de imagen, solo aparecen si seleccionas una imagen -->
+  <div id="image-edit-controls" class="image-edit-controls" style="display:none;">
+    <label>Tamaño ancho (%):
+      <input type="range" id="img-width" min="10" max="100" value="100" />
+      <label for="img-height">Alto (%)</label>
+    <input type="range" id="img-height" min="10" max="100" step="1">
+
+    </label>
+    <div>
+      <button data-align="left">Izquierda</button>
+      <button data-align="center">Centro</button>
+      <button data-align="right">Derecha</button>
+    </div>
+  </div>
+
+  <div class="modal-buttons">
+    <button id="modal-insert-btn">Insertar</button>
+    <button id="modal-cancel-btn">Cancelar</button>
+  </div>
+</div>
+
+
+<script src="js/editor.js"></script>
+
+</body>
+</html>

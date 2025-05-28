@@ -1,0 +1,302 @@
+/* Reset y estilo básico */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 0;
+  background: #fefefe;
+  color: #222;
+}
+
+header {
+  background: #3a86ff;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem 2rem;
+  height: calc(100vh - 70px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.editor-container {
+  max-width: 960px;
+  width: 100%;
+}
+
+.editor-controls {
+  margin-bottom: 1rem;
+  background: #3a86ff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.editor-controls button {
+  cursor: pointer;
+  border: none;
+  background: white;
+  padding: 6px 12px;
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: #3a86ff;
+  transition: background-color 0.2s ease;
+}
+
+.editor-controls button:hover {
+  background: #d6e4ff;
+}
+
+.editor-controls select {
+  border-radius: 5px;
+  border: none;
+  padding: 6px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.editor-wrapper {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+  background: white;
+  box-shadow: 0 4px 12px rgb(58 134 255 / 0.2);
+}
+
+.line-numbers {
+  user-select: none;
+  background: #f0f4ff;
+  color: #7a8caf;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 10px 8px;
+  text-align: right;
+  line-height: 1.4em;
+  min-width: 40px;
+  overflow: hidden;
+}
+
+#story-input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 1.4em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border-left: 1px solid #ddd;
+  overflow-wrap: break-word;
+  min-height: 400px;
+  border-radius: 0 8px 8px 0;
+  background: white;
+  cursor: text;
+}
+
+
+
+
+/* Imagen insertada */
+.inserted-image {
+  max-width: 100%;
+  margin: 0.3rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+}
+
+/* Panel para insertar imagen */
+.image-insert {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+  background: #f9faff;
+}
+
+.image-insert h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: #3a86ff;
+}
+
+.image-insert label,
+.image-insert input,
+.image-insert button {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 14px;
+}
+
+.image-insert input[type="number"],
+.image-insert input[type="file"] {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.image-insert button {
+  background: #3a86ff;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.image-insert button:hover {
+  background: #265ecf;
+}
+
+/* Controles de imagen seleccionada */
+.image-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.image-controls label {
+  font-size: 14px;
+}
+
+.image-controls input[type=range] {
+  vertical-align: middle;
+}
+
+.image-controls button {
+  padding: 5px 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #3a86ff;
+  background: white;
+  color: #3a86ff;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.image-controls button:hover {
+  background: #3a86ff;
+  color: white;
+}
+
+/* Botón icono en barra */
+.icon-button {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+.icon-button:hover {
+  transform: scale(1.2);
+}
+
+/* Panel de control de imagen: flota en la esquina inferior derecha */
+#image-modal {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+  width: 300px; /* Ajusta el ancho a lo necesario */
+}
+
+#image-modal.modal-hidden {
+  display: none;
+}
+
+#image-modal h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3a86ff;
+}
+
+#image-modal label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#image-modal input[type="range"],
+#image-modal input[type="number"],
+#image-modal input[type="file"] {
+  width: 100%;
+}
+
+#image-modal button {
+  padding: 6px 10px;
+  border: 1px solid #3a86ff;
+  background: white;
+  color: #3a86ff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#image-modal button:hover {
+  background: #3a86ff;
+  color: white;
+}
+
+#image-modal .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#image-modal .modal-buttons button:last-child {
+  border-color: #bbb;
+  color: #333;
+}
+
+#image-modal .modal-buttons button:last-child:hover {
+  background: #999;
+  color: white;
+}

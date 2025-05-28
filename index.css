@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f0f0f5;
+  color: #333;
+}
+
+header {
+  background: #6a5acd;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav {
+  flex: 1;
+  text-align: center;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.search-container {
+  flex: 1;
+  text-align: right;
+}
+
+.search-container input {
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome h2 {
+  margin-bottom: 0.5rem;
+}
+
+.stories-preview {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.stories-preview h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.story-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.story-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #6a5acd;
+}
+
+.story-card p {
+  margin: 0;
+  color: #555;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
